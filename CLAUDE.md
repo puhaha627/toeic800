@@ -15,7 +15,7 @@ tools\python\python.exe build_audio.py 1        # builds Day 1 from content/day0
 tools\python\python.exe -m pip install <pkg>    # add a package to the portable Python
 ```
 
-There are no tests and no lint setup. The build prints how many minutes each track runs. Use that to check a day comes to roughly 60 minutes.
+Icons come from `make_icons.py` (Pillow), and the QR code from `make_qr.py` (qrcode). There are no tests and no lint setup. The build prints how many minutes each track runs. Use that to check a day comes to roughly 60 minutes.
 
 ## Pipeline
 
@@ -29,23 +29,21 @@ There are no tests and no lint setup. The build prints how many minutes each tra
    - news: full read → paragraph + Korean
 3. Each unique (voice, text) is synthesized once with edge-tts and cached in `cache/` under a sha1 name. A rebuild only synthesizes changed lines.
 4. Tracks are joined by concatenating raw MP3 bytes. No ffmpeg is needed. This works because edge-tts always outputs MPEG-2 Layer III at 24 kHz, 48 kbps, mono CBR. Pauses are hand-built silent frames in that same format (`SILENT_FRAME`, 24 ms each). Durations are computed as bytes / 6000. If the edge-tts output format changes, this all breaks.
-5. Output goes to `audio/dayNNN/dayNNN_01..05.mp3`, plus `dayNNN_00_full.mp3`. Each file gets a hand-written ID3v2.3 tag.
+5. Per-track files go to `docs/audio/dayNNN/dayNNN_01..05.mp3`, and the build adds or updates that day in `docs/days.json`. The single full-day file goes to the git-ignored `audio/` folder for local use only. Each file gets a hand-written ID3v2.3 tag.
 
-## Player and publishing
+## App and publishing
 
-`player/index.html` is a one-screen player published as a claude.ai Artifact: https://claude.ai/artifact/KSnCAxCvWdhKkxmKGk6cXK
+`docs/` is an installable PWA, served by GitHub Pages from `/docs` on `main`. The repo is `toeic800` on the user's account. The user has an Android phone.
 
-It has:
-- a large play button
-- automatic advance to the next track
-- Media Session handlers, so car and Bluetooth buttons work
-- the listening position saved in localStorage
+- `index.html` is the one-screen player. It lists days from `days.json`, so adding a day needs no HTML edit. When a newer day appears, it jumps to that day once. Otherwise it resumes the saved position from localStorage. Media Session handlers let car and Bluetooth buttons work.
+- `sw.js` serves the app network-first. MP3s are cached only when the user taps 저장 for a day. Cached MP3s are answered with hand-built 206 responses, because `<audio>` sends Range requests. Bump `SHELL` when shell files change.
+- `qr.png` is the install QR code. `make_qr.py <url>` creates it. On desktop the page shows it so the phone can scan it.
 
-To add a day:
-1. Add an entry to the `DAYS` array, using the per-track minutes the build printed.
-2. Republish `player/index.html` to the same URL, with the new MP3s passed in `files`. Map each file to the same path: `audio/dayNNN/dayNNN_0X.mp3`.
+To publish a new day: build it, then run `.\publish.ps1 "Add Day N"`. The script commits, pushes and, on its first run, creates the repo, enables Pages and makes the QR code. It needs `gh auth login` done once. Git and gh were installed with winget, so a shell that was already open may need its PATH refreshed.
 
-Upload only the per-track files. The `_00_full.mp3` file (about 23 MB) is over the 15 MB limit for one artifact file.
+A GitHub Pages site is limited to about 1 GB, and each day adds about 24 MB. After roughly 40 days, old days will have to be removed.
+
+An earlier player still exists as a claude.ai Artifact: https://claude.ai/artifact/KSnCAxCvWdhKkxmKGk6cXK (source `player/`, git-ignored). It only contains Day 1.
 
 ## Content rules
 
