@@ -1,0 +1,272 @@
+{
+  "day": 1,
+  "part2": [
+    {"accent": "US", "spk": "W", "answer": "B",
+     "q": {"en": "When is the new marketing manager starting?", "ko": "새 마케팅 매니저는 언제 일을 시작하나요?"},
+     "options": [
+       {"en": "In the conference room.", "ko": "회의실에서요."},
+       {"en": "At the end of the month.", "ko": "이달 말에요."},
+       {"en": "Yes, he started the project.", "ko": "네, 그가 그 프로젝트를 시작했어요."}]},
+    {"accent": "GB", "spk": "M", "answer": "A",
+     "q": {"en": "Who's in charge of ordering office supplies?", "ko": "사무용품 주문은 누가 담당하나요?"},
+     "options": [
+       {"en": "Mr. Lee usually handles that.", "ko": "보통 이 씨가 그 일을 처리해요."},
+       {"en": "Twice a week.", "ko": "일주일에 두 번이요."},
+       {"en": "They're in the supply closet.", "ko": "그것들은 비품 보관함에 있어요."}]},
+    {"accent": "AU", "spk": "W", "answer": "B",
+     "q": {"en": "Why was the flight to Chicago delayed?", "ko": "시카고행 비행기는 왜 지연됐나요?"},
+     "options": [
+       {"en": "I'd prefer a window seat.", "ko": "저는 창가 자리가 좋아요."},
+       {"en": "Because of the heavy snow.", "ko": "폭설 때문에요."},
+       {"en": "About two hours ago.", "ko": "약 두 시간 전에요."}]},
+    {"accent": "CA", "spk": "M", "answer": "A",
+     "q": {"en": "Would you like to join us for lunch today?", "ko": "오늘 저희랑 같이 점심 드실래요?"},
+     "options": [
+       {"en": "Sure, where are you going?", "ko": "좋아요, 어디로 가세요?"},
+       {"en": "The lunch menu has changed.", "ko": "점심 메뉴가 바뀌었어요."},
+       {"en": "Yes, I joined last year.", "ko": "네, 저는 작년에 가입했어요."}]},
+    {"accent": "US", "spk": "M", "answer": "B",
+     "q": {"en": "Where can I find the updated sales report?", "ko": "업데이트된 판매 보고서는 어디서 찾을 수 있나요?"},
+     "options": [
+       {"en": "Sales have increased a lot.", "ko": "매출이 많이 늘었어요."},
+       {"en": "I'll e-mail it to you right now.", "ko": "지금 바로 이메일로 보내 드릴게요."},
+       {"en": "By Friday afternoon.", "ko": "금요일 오후까지요."}]},
+    {"accent": "GB", "spk": "W", "answer": "A",
+     "q": {"en": "Haven't you finished the budget proposal yet?", "ko": "아직 예산 제안서를 다 끝내지 않았나요?"},
+     "options": [
+       {"en": "I'm working on the last page.", "ko": "마지막 페이지를 작업 중이에요."},
+       {"en": "The budget was approved last year.", "ko": "그 예산은 작년에 승인됐어요."},
+       {"en": "No, it's not expensive.", "ko": "아니요, 비싸지 않아요."}]},
+    {"accent": "AU", "spk": "M", "answer": "A",
+     "q": {"en": "How often does the shuttle bus run to the airport?", "ko": "공항행 셔틀버스는 얼마나 자주 운행하나요?"},
+     "options": [
+       {"en": "Every thirty minutes.", "ko": "30분마다요."},
+       {"en": "It's about ten kilometers.", "ko": "약 10킬로미터예요."},
+       {"en": "I'll run it by my boss.", "ko": "제 상사에게 의견을 물어볼게요."}]},
+    {"accent": "CA", "spk": "W", "answer": "A",
+     "q": {"en": "The printer on the third floor is out of order again.", "ko": "3층 프린터가 또 고장 났어요."},
+     "options": [
+       {"en": "I'll call the repair service.", "ko": "제가 수리 서비스에 전화할게요."},
+       {"en": "In alphabetical order.", "ko": "알파벳 순서로요."},
+       {"en": "Three copies, please.", "ko": "세 부 부탁해요."}]},
+    {"accent": "US", "spk": "W", "answer": "B",
+     "q": {"en": "Should we hold the meeting in the morning or in the afternoon?", "ko": "회의를 오전에 할까요, 오후에 할까요?"},
+     "options": [
+       {"en": "I held the door for you.", "ko": "제가 문을 잡아 드렸어요."},
+       {"en": "The afternoon works better for me.", "ko": "저는 오후가 더 좋아요."},
+       {"en": "Yes, we should.", "ko": "네, 그래야 해요."}]},
+    {"accent": "GB", "spk": "M", "answer": "A",
+     "q": {"en": "Can you help me move these boxes to the storage room?", "ko": "이 상자들을 창고로 옮기는 것 좀 도와줄래요?"},
+     "options": [
+       {"en": "Sorry, I'm on my way to a client meeting.", "ko": "미안해요, 고객 회의에 가는 중이에요."},
+       {"en": "They're made of cardboard.", "ko": "그것들은 판지로 만들어졌어요."},
+       {"en": "Yes, I moved last month.", "ko": "네, 저는 지난달에 이사했어요."}]},
+    {"accent": "AU", "spk": "W", "answer": "A",
+     "q": {"en": "Isn't the store open until nine tonight?", "ko": "그 가게는 오늘 밤 9시까지 열지 않나요?"},
+     "options": [
+       {"en": "Only on weekends.", "ko": "주말에만요."},
+       {"en": "Nine dollars each.", "ko": "개당 9달러예요."},
+       {"en": "Please close the door.", "ko": "문 좀 닫아 주세요."}]},
+    {"accent": "CA", "spk": "M", "answer": "B",
+     "q": {"en": "What did you think of the presentation?", "ko": "발표 어떠셨어요?"},
+     "options": [
+       {"en": "Around fifty people.", "ko": "50명 정도요."},
+       {"en": "It was very informative.", "ko": "아주 유익했어요."},
+       {"en": "I'll present it tomorrow.", "ko": "제가 내일 발표할게요."}]},
+    {"accent": "US", "spk": "M", "answer": "A",
+     "q": {"en": "Who's going to pick up the clients from the station?", "ko": "역에서 고객들은 누가 모시고 올 건가요?"},
+     "options": [
+       {"en": "Ms. Park volunteered to do it.", "ko": "박 씨가 자원했어요."},
+       {"en": "At the train station.", "ko": "기차역에서요."},
+       {"en": "They picked the blue one.", "ko": "그들은 파란색을 골랐어요."}]},
+    {"accent": "GB", "spk": "W", "answer": "A",
+     "q": {"en": "Why don't we order some pizza for the team?", "ko": "팀을 위해 피자를 좀 주문하는 게 어때요?"},
+     "options": [
+       {"en": "That's a great idea.", "ko": "좋은 생각이에요."},
+       {"en": "Because it was late.", "ko": "늦었기 때문이에요."},
+       {"en": "On the order form.", "ko": "주문서에요."}]},
+    {"accent": "AU", "spk": "M", "answer": "A",
+     "q": {"en": "Do you know if the contract has been signed?", "ko": "계약서가 서명되었는지 아세요?"},
+     "options": [
+       {"en": "The legal team is still reviewing it.", "ko": "법무팀이 아직 검토 중이에요."},
+       {"en": "Sign here, please.", "ko": "여기에 서명해 주세요."},
+       {"en": "No, I haven't contacted him.", "ko": "아니요, 그에게 연락하지 않았어요."}]}
+  ],
+
+  "part3": [
+    {"accent": "US",
+     "lines": [
+       {"spk": "W", "en": "Hi, Daniel. Have you booked the hotel for the sales conference in Denver next month?", "ko": "안녕하세요, 대니얼. 다음 달 덴버 영업 회의 때 묵을 호텔은 예약했어요?"},
+       {"spk": "M", "en": "Not yet. I checked the hotel next to the convention center, but it's already fully booked.", "ko": "아직이요. 컨벤션 센터 옆 호텔을 확인해 봤는데, 이미 예약이 꽉 찼더라고요."},
+       {"spk": "W", "en": "That's too bad. What about the Riverside Inn? It's only a ten-minute walk from the center, and they offer a discount for groups.", "ko": "아쉽네요. 리버사이드 인은 어때요? 센터에서 걸어서 10분밖에 안 걸리고, 단체 할인도 해 줘요."},
+       {"spk": "M", "en": "Good idea. I'll call them this afternoon and ask how many rooms are available.", "ko": "좋은 생각이에요. 오늘 오후에 전화해서 방이 몇 개 남아 있는지 물어볼게요."},
+       {"spk": "W", "en": "Great. And please make sure they offer free breakfast. Last year, we spent too much on meals.", "ko": "좋아요. 그리고 무료 조식이 제공되는지 꼭 확인해 주세요. 작년에 식비를 너무 많이 썼거든요."}],
+     "questions": [
+       {"en": "What are the speakers mainly discussing?", "ko": "화자들은 주로 무엇에 대해 이야기하고 있나요?",
+        "options": ["A product launch", "Hotel arrangements", "A job interview", "An office renovation"], "answer": "B", "answer_ko": "호텔 예약 준비"},
+       {"en": "What problem does the man mention?", "ko": "남자는 어떤 문제를 언급하나요?",
+        "options": ["A flight was canceled.", "A price has increased.", "A hotel has no rooms left.", "A meeting was postponed."], "answer": "C", "answer_ko": "호텔에 남은 방이 없다."},
+       {"en": "What does the woman ask the man to confirm?", "ko": "여자는 남자에게 무엇을 확인해 달라고 하나요?",
+        "options": ["Free breakfast", "Parking fees", "Check-in time", "A shuttle service"], "answer": "A", "answer_ko": "무료 조식"}]},
+
+    {"accent": "GB",
+     "lines": [
+       {"spk": "M", "en": "Good morning. How can I help you?", "ko": "안녕하세요. 무엇을 도와드릴까요?"},
+       {"spk": "W", "en": "Hi. I bought this coffee maker here last week, but it stopped working yesterday. It won't turn on at all.", "ko": "안녕하세요. 지난주에 여기서 이 커피 메이커를 샀는데, 어제 작동을 멈췄어요. 아예 전원이 안 켜져요."},
+       {"spk": "M", "en": "I'm sorry to hear that. Do you have your receipt?", "ko": "그렇다니 죄송합니다. 영수증 가지고 계신가요?"},
+       {"spk": "W", "en": "Yes, here it is. I'd like to exchange it for a new one, if possible.", "ko": "네, 여기 있어요. 가능하면 새 제품으로 교환하고 싶어요."},
+       {"spk": "M", "en": "Unfortunately, that model is sold out right now. But we're expecting a new shipment on Thursday. I can give you a full refund today, or you can come back for an exchange later this week.", "ko": "죄송하지만 그 모델은 지금 품절입니다. 하지만 목요일에 새 물량이 들어올 예정이에요. 오늘 전액 환불해 드리거나, 이번 주 후반에 다시 오셔서 교환하실 수 있습니다."},
+       {"spk": "W", "en": "I'll come back on Thursday, then. I really like this model.", "ko": "그럼 목요일에 다시 올게요. 이 모델이 정말 마음에 들거든요."}],
+     "questions": [
+       {"en": "Where most likely does the conversation take place?", "ko": "대화는 어디에서 이루어지고 있을 가능성이 가장 높나요?",
+        "options": ["At a café", "At an appliance store", "At a repair shop", "At a post office"], "answer": "B", "answer_ko": "가전제품 매장"},
+       {"en": "What does the man ask the woman for?", "ko": "남자는 여자에게 무엇을 요청하나요?",
+        "options": ["A receipt", "A credit card", "A photo ID", "A phone number"], "answer": "A", "answer_ko": "영수증"},
+       {"en": "What will the woman probably do on Thursday?", "ko": "여자는 목요일에 무엇을 할 것 같나요?",
+        "options": ["Receive a refund", "Visit the store again", "Call the manufacturer", "Order a product online"], "answer": "B", "answer_ko": "매장을 다시 방문한다."}]},
+
+    {"accent": "AU",
+     "lines": [
+       {"spk": "W", "en": "Thanks for coming, everyone. As you know, we're switching to a new accounting software system next month.", "ko": "모두 와 주셔서 감사합니다. 아시다시피 다음 달에 새 회계 소프트웨어 시스템으로 바꿉니다."},
+       {"spk": "M", "en": "Will there be any training? I'm worried it'll take a long time to learn.", "ko": "교육이 있나요? 배우는 데 시간이 오래 걸릴까 봐 걱정돼요."},
+       {"spk": "W", "en": "Yes. Kevin from the IT department is here to explain.", "ko": "네. IT 부서의 케빈이 설명하러 와 있어요."},
+       {"spk": "M2", "en": "Hi, everyone. We'll hold two training sessions next week, one on Tuesday morning and another on Wednesday afternoon. Each session lasts about three hours.", "ko": "안녕하세요, 여러분. 다음 주에 교육을 두 번 진행합니다. 화요일 오전에 한 번, 수요일 오후에 한 번이요. 각 교육은 약 세 시간 정도 걸립니다."},
+       {"spk": "M", "en": "I have a client meeting on Tuesday, so I'll sign up for Wednesday.", "ko": "저는 화요일에 고객 미팅이 있어서 수요일로 신청할게요."},
+       {"spk": "M2", "en": "That's fine. Just register on the company website by Friday so we can prepare enough laptops.", "ko": "괜찮습니다. 노트북을 충분히 준비할 수 있도록 금요일까지 회사 웹사이트에서 등록만 해 주세요."}],
+     "questions": [
+       {"en": "What will the company change next month?", "ko": "회사는 다음 달에 무엇을 바꿀 예정인가요?",
+        "options": ["Its office location", "Its accounting software", "Its working hours", "Its website design"], "answer": "B", "answer_ko": "회계 소프트웨어"},
+       {"en": "Why does the man choose the Wednesday session?", "ko": "남자는 왜 수요일 교육을 선택하나요?",
+        "options": ["It is shorter.", "He has a meeting on Tuesday.", "He prefers the afternoon.", "The Tuesday session is full."], "answer": "B", "answer_ko": "화요일에 미팅이 있다."},
+       {"en": "What are the listeners asked to do by Friday?", "ko": "청자들은 금요일까지 무엇을 하라고 요청받나요?",
+        "options": ["Bring their laptops", "Submit a report", "Register online", "Contact a client"], "answer": "C", "answer_ko": "온라인으로 등록한다."}]},
+
+    {"accent": "CA",
+     "lines": [
+       {"spk": "W", "en": "Hello, this is Emily Carter from Bright Media. I'm calling about your application for the graphic designer position.", "ko": "안녕하세요, 브라이트 미디어의 에밀리 카터입니다. 그래픽 디자이너 직에 지원하신 건으로 전화드렸어요."},
+       {"spk": "M", "en": "Oh, hi. Thank you for calling.", "ko": "아, 안녕하세요. 전화 주셔서 감사합니다."},
+       {"spk": "W", "en": "We were very impressed with your portfolio, and we'd like to invite you for an interview. Are you available next Monday at ten?", "ko": "포트폴리오가 아주 인상적이어서 면접에 모시고 싶습니다. 다음 주 월요일 10시에 시간 되세요?"},
+       {"spk": "M", "en": "I'm afraid I have another appointment that morning. Would it be possible to meet in the afternoon instead?", "ko": "죄송하지만 그날 오전에 다른 약속이 있어요. 대신 오후에 만나는 게 가능할까요?"},
+       {"spk": "W", "en": "Sure. How about two o'clock? Also, please bring a few printed samples of your recent work.", "ko": "물론이죠. 2시는 어떠세요? 그리고 최근 작업물 샘플을 몇 개 출력해서 가져와 주세요."},
+       {"spk": "M", "en": "Two o'clock is perfect. I'll bring them with me.", "ko": "2시 아주 좋아요. 가지고 가겠습니다."}],
+     "questions": [
+       {"en": "Why is the woman calling?", "ko": "여자는 왜 전화하고 있나요?",
+        "options": ["To confirm a delivery", "To arrange an interview", "To offer a discount", "To cancel a meeting"], "answer": "B", "answer_ko": "면접 일정을 잡기 위해"},
+       {"en": "What does the man say about Monday morning?", "ko": "남자는 월요일 오전에 대해 뭐라고 말하나요?",
+        "options": ["He will be traveling.", "He has another appointment.", "He will be at his office.", "He is not feeling well."], "answer": "B", "answer_ko": "다른 약속이 있다."},
+       {"en": "What does the woman ask the man to bring?", "ko": "여자는 남자에게 무엇을 가져오라고 하나요?",
+        "options": ["A reference letter", "A form of identification", "Samples of his work", "A completed form"], "answer": "C", "answer_ko": "작업물 샘플"}]},
+
+    {"accent": "US",
+     "lines": [
+       {"spk": "M", "en": "Jessica, the company anniversary party is only two weeks away. Have we decided on a caterer yet?", "ko": "제시카, 회사 창립 기념 파티가 2주밖에 안 남았어요. 출장 요리 업체는 정했나요?"},
+       {"spk": "W", "en": "I got price estimates from three companies. Green Table is the cheapest, but they can't serve more than one hundred guests.", "ko": "세 업체에서 견적을 받았어요. 그린 테이블이 가장 싸지만, 손님을 100명 넘게는 받을 수 없대요."},
+       {"spk": "M", "en": "We're expecting about one hundred and fifty people, so that won't work.", "ko": "우리는 150명 정도 예상하고 있으니 그건 안 되겠네요."},
+       {"spk": "W", "en": "Right. Then I think Sunrise Catering is the best choice. Their prices are reasonable, and their food got great reviews at last year's trade show.", "ko": "맞아요. 그럼 선라이즈 케이터링이 최선인 것 같아요. 가격도 적당하고, 작년 무역 박람회에서 음식 평이 아주 좋았어요."},
+       {"spk": "M", "en": "OK, let's go with them. Could you send me their menu? I'd like to share it with the director before we sign the contract.", "ko": "좋아요, 거기로 하죠. 메뉴 좀 보내 줄래요? 계약서에 서명하기 전에 이사님께 공유하고 싶어요."}],
+     "questions": [
+       {"en": "What event are the speakers preparing for?", "ko": "화자들은 어떤 행사를 준비하고 있나요?",
+        "options": ["A trade show", "A company anniversary party", "A retirement dinner", "A product demonstration"], "answer": "B", "answer_ko": "회사 창립 기념 파티"},
+       {"en": "Why is Green Table not suitable?", "ko": "그린 테이블은 왜 적합하지 않나요?",
+        "options": ["It is too expensive.", "It cannot serve enough guests.", "It is closed that week.", "It received bad reviews."], "answer": "B", "answer_ko": "충분한 인원을 받을 수 없다."},
+       {"en": "What does the man ask the woman to send?", "ko": "남자는 여자에게 무엇을 보내 달라고 하나요?",
+        "options": ["A contract", "A guest list", "A menu", "An invoice"], "answer": "C", "answer_ko": "메뉴"}]}
+  ],
+
+  "part4": [
+    {"accent": "US", "spk": "W", "type_en": "announcement",
+     "paragraphs": [
+       {"en": "Attention, shoppers. Thank you for shopping at Fresh Market. We're happy to announce that our store is celebrating its tenth anniversary this week.", "ko": "쇼핑객 여러분께 알려 드립니다. 프레시 마켓을 이용해 주셔서 감사합니다. 저희 매장이 이번 주에 개점 10주년을 맞이했음을 기쁘게 알려 드립니다."},
+       {"en": "To thank our loyal customers, all fruits and vegetables are twenty percent off until Sunday. In addition, our bakery is offering free samples of our new whole-grain bread near the entrance.", "ko": "단골 고객 여러분께 감사드리는 뜻으로 일요일까지 모든 과일과 채소를 20퍼센트 할인합니다. 또한 베이커리에서는 입구 근처에서 새로 나온 통곡물 빵 무료 시식을 제공하고 있습니다."},
+       {"en": "Don't forget to sign up for our membership card at the customer service desk. Members receive special coupons by e-mail every week. Thank you, and enjoy your shopping.", "ko": "고객 서비스 데스크에서 멤버십 카드 가입하시는 것도 잊지 마세요. 회원님들께는 매주 이메일로 특별 쿠폰을 보내 드립니다. 감사합니다. 즐거운 쇼핑 되세요."}],
+     "questions": [
+       {"en": "What is the store celebrating?", "ko": "매장은 무엇을 기념하고 있나요?",
+        "options": ["A grand opening", "Its tenth anniversary", "A national holiday", "A new location"], "answer": "B", "answer_ko": "개점 10주년"},
+       {"en": "What is being offered near the entrance?", "ko": "입구 근처에서 무엇이 제공되고 있나요?",
+        "options": ["Shopping bags", "Free samples", "Discount coupons", "Gift cards"], "answer": "B", "answer_ko": "무료 시식"},
+       {"en": "How can listeners receive coupons by e-mail?", "ko": "청자들은 어떻게 이메일로 쿠폰을 받을 수 있나요?",
+        "options": ["By downloading an app", "By completing a survey", "By joining a membership program", "By spending over fifty dollars"], "answer": "C", "answer_ko": "멤버십에 가입해서"}]},
+
+    {"accent": "GB", "spk": "M", "type_en": "telephone message",
+     "paragraphs": [
+       {"en": "Hi, Ms. Robinson. This is Tom Hughes from City Auto Repair, calling about your car. We've finished checking the engine, and the problem was a damaged battery cable.", "ko": "안녕하세요, 로빈슨 씨. 시티 오토 리페어의 톰 휴즈입니다. 고객님 차 때문에 전화드렸어요. 엔진 점검을 마쳤는데, 문제는 손상된 배터리 케이블이었습니다."},
+       {"en": "The good news is that it's not expensive to fix. The repair will cost about eighty dollars, including parts and labor. However, we need to order the cable from our supplier, so it won't arrive until tomorrow morning.", "ko": "다행히 수리비가 비싸지 않아요. 부품비와 공임을 포함해서 약 80달러 정도 듭니다. 다만 케이블을 공급업체에 주문해야 해서 내일 아침에야 도착합니다."},
+       {"en": "That means your car should be ready by three p.m. tomorrow. Please call me back at 555-0172 to confirm that you'd like us to go ahead with the repair. Thank you.", "ko": "그래서 차는 내일 오후 3시까지 준비될 겁니다. 수리를 진행해도 될지 확인해 주시려면 555-0172로 다시 전화 주세요. 감사합니다."}],
+     "questions": [
+       {"en": "Where does the speaker work?", "ko": "화자는 어디에서 일하나요?",
+        "options": ["At a car rental agency", "At an auto repair shop", "At a parts factory", "At a parking garage"], "answer": "B", "answer_ko": "자동차 정비소"},
+       {"en": "Why will the repair be delayed?", "ko": "수리는 왜 늦어지나요?",
+        "options": ["A mechanic is on vacation.", "A part must be ordered.", "The shop is closed.", "A manager must approve the cost."], "answer": "B", "answer_ko": "부품을 주문해야 한다."},
+       {"en": "What does the speaker ask the listener to do?", "ko": "화자는 청자에게 무엇을 해 달라고 하나요?",
+        "options": ["Pick up her car today", "Pay in advance", "Return his call", "Visit a website"], "answer": "C", "answer_ko": "다시 전화한다."}]},
+
+    {"accent": "AU", "spk": "W", "type_en": "talk",
+     "paragraphs": [
+       {"en": "Good morning, everyone, and welcome to the Oakwood Chocolate Factory. My name is Sarah, and I'll be your guide for today's tour, which will take about an hour.", "ko": "여러분, 안녕하세요. 오크우드 초콜릿 공장에 오신 것을 환영합니다. 저는 사라이고, 약 한 시간 정도 걸리는 오늘 투어의 가이드를 맡았습니다."},
+       {"en": "First, we'll visit the area where cocoa beans are roasted. Then you'll see how our chocolate bars are shaped and packaged. For safety reasons, please don't touch any of the machines, and stay with the group at all times.", "ko": "먼저 카카오 콩을 볶는 구역을 방문하겠습니다. 그다음 초콜릿 바가 어떻게 모양이 만들어지고 포장되는지 보시게 됩니다. 안전을 위해 기계는 절대 만지지 마시고, 항상 일행과 함께 있어 주세요."},
+       {"en": "At the end of the tour, you'll be able to taste some of our most popular products. And don't forget to stop by our gift shop on the first floor. Today only, all visitors get fifteen percent off any purchase.", "ko": "투어 마지막에는 가장 인기 있는 제품 몇 가지를 맛보실 수 있습니다. 그리고 1층 기념품점에도 꼭 들러 주세요. 오늘 하루만 모든 방문객은 구매 금액의 15퍼센트를 할인받으실 수 있습니다."}],
+     "questions": [
+       {"en": "Who most likely is the speaker?", "ko": "화자는 누구일 가능성이 가장 높나요?",
+        "options": ["A factory worker", "A tour guide", "A store manager", "A chef"], "answer": "B", "answer_ko": "투어 가이드"},
+       {"en": "What are the listeners asked not to do?", "ko": "청자들은 무엇을 하지 말라는 요청을 받나요?",
+        "options": ["Take photos", "Touch the machines", "Eat in the factory", "Leave their bags"], "answer": "B", "answer_ko": "기계를 만지는 것"},
+       {"en": "What is available today only?", "ko": "오늘만 이용할 수 있는 것은 무엇인가요?",
+        "options": ["A free gift", "A discount at the gift shop", "A cooking class", "A second tour"], "answer": "B", "answer_ko": "기념품점 할인"}]},
+
+    {"accent": "CA", "spk": "M", "type_en": "broadcast",
+     "paragraphs": [
+       {"en": "Good afternoon. This is Mark Chen with your afternoon traffic update on Radio 101. Drivers heading downtown should expect delays on Highway 9 this afternoon because of road construction near the Elm Street exit.", "ko": "안녕하세요. 라디오 101 오후 교통 정보의 마크 첸입니다. 시내로 향하는 운전자분들은 엘름 스트리트 출구 근처 도로 공사로 인해 오늘 오후 9번 고속도로에서 정체를 예상하셔야 합니다."},
+       {"en": "City officials say two lanes will be closed until about seven p.m. If possible, take Main Street or Riverside Drive instead. Also, heavy rain is expected later this evening, so please drive carefully and allow extra time to reach your destination.", "ko": "시 관계자에 따르면 오후 7시경까지 두 개 차선이 통제됩니다. 가능하면 대신 메인 스트리트나 리버사이드 드라이브를 이용하세요. 또한 오늘 저녁 늦게 폭우가 예상되니 조심해서 운전하시고 목적지까지 여유 있게 출발하세요."},
+       {"en": "We'll have another traffic update in thirty minutes. But first, let's hear a word from our sponsor, Pine Valley Bank.", "ko": "30분 후에 다시 교통 정보를 전해 드리겠습니다. 하지만 먼저 후원사인 파인 밸리 은행의 광고를 들어 보시죠."}],
+     "questions": [
+       {"en": "What is causing delays on Highway 9?", "ko": "9번 고속도로 정체의 원인은 무엇인가요?",
+        "options": ["A car accident", "Road construction", "A parade", "Heavy snow"], "answer": "B", "answer_ko": "도로 공사"},
+       {"en": "What does the speaker recommend?", "ko": "화자는 무엇을 권하나요?",
+        "options": ["Using public transportation", "Taking other roads", "Leaving work early", "Checking a website"], "answer": "B", "answer_ko": "다른 도로를 이용하는 것"},
+       {"en": "What will the listeners most likely hear next?", "ko": "청자들은 다음에 무엇을 듣게 될 가능성이 가장 높나요?",
+        "options": ["A weather forecast", "An advertisement", "A music program", "An interview"], "answer": "B", "answer_ko": "광고"}]}
+  ],
+
+  "vocab": [
+    {"word": "available", "ko": "이용 가능한, 시간이 되는"},
+    {"word": "conference", "ko": "회의, 학회"},
+    {"word": "discount", "ko": "할인"},
+    {"word": "receipt", "ko": "영수증"},
+    {"word": "exchange", "ko": "교환하다"},
+    {"word": "refund", "ko": "환불"},
+    {"word": "shipment", "ko": "배송품, 수송"},
+    {"word": "department", "ko": "부서"},
+    {"word": "session", "ko": "활동 시간, 수업 한 번"},
+    {"word": "application", "ko": "지원, 신청"},
+    {"word": "position", "ko": "직책, 자리"},
+    {"word": "impressed", "ko": "감명받은, 깊은 인상을 받은"},
+    {"word": "appointment", "ko": "약속, 예약"},
+    {"word": "estimate", "ko": "견적, 추정"},
+    {"word": "reasonable", "ko": "적당한, 합리적인"},
+    {"word": "contract", "ko": "계약, 계약서"},
+    {"word": "anniversary", "ko": "기념일"},
+    {"word": "loyal", "ko": "충성스러운, 단골의"},
+    {"word": "entrance", "ko": "입구"},
+    {"word": "repair", "ko": "수리하다, 수리"},
+    {"word": "supplier", "ko": "공급업체"},
+    {"word": "confirm", "ko": "확인하다"},
+    {"word": "purchase", "ko": "구매, 구매하다"},
+    {"word": "destination", "ko": "목적지"},
+    {"word": "proposal", "ko": "제안, 제안서"}
+  ],
+
+  "news": [
+    {"title_en": "South Korea's Nuri Rocket Completes Fifth Flight", "title_ko": "한국 누리호, 5차 발사 비행 완료",
+     "paragraphs": [
+       {"en": "South Korea's homegrown space rocket, Nuri, completed its fifth flight on Wednesday, October seventh, lifting off from the Naro Space Center on the country's southern coast.", "ko": "한국이 자체 개발한 우주 발사체 누리호가 10월 7일 수요일, 남해안의 나로우주센터에서 이륙해 다섯 번째 비행을 마쳤습니다."},
+       {"en": "The rocket was carrying a record fifteen satellites. Officials said fourteen of them were successfully released into an orbit about five hundred seventy kilometers above the Earth, including five small satellites developed for the government and nine tiny satellites known as CubeSats.", "ko": "누리호는 역대 최다인 15기의 위성을 싣고 있었습니다. 당국에 따르면 그중 14기가 지구 상공 약 570킬로미터 궤도에 성공적으로 분리됐는데, 정부용으로 개발된 초소형 위성 5기와 큐브샛이라 불리는 소형 위성 9기가 포함됩니다."},
+       {"en": "However, one CubeSat, built by a private company, failed to separate from the rocket. Early signals had suggested that all of the satellites were deployed, but a closer analysis of the data later revealed the problem.", "ko": "하지만 민간 기업이 만든 큐브샛 1기는 발사체에서 분리되지 못했습니다. 초기 신호로는 모든 위성이 분리된 것처럼 보였지만, 이후 데이터를 자세히 분석한 결과 문제가 드러났습니다."},
+       {"en": "Even so, the Korea Aerospace Administration described the mission as a success, noting that Nuri has now succeeded four times in a row since its first launch failed in 2021. Five more satellites are scheduled to be launched on Nuri's sixth mission in 2027.", "ko": "그럼에도 우주항공청은 이번 임무를 성공으로 평가하며, 누리호가 2021년 첫 발사 실패 이후 네 번 연속 성공했다고 밝혔습니다. 2027년 누리호 6차 발사에서는 위성 5기가 추가로 발사될 예정입니다."}]},
+    {"title_en": "Seoul Says Washington Jumped the Gun on Alaska Gas Investment", "title_ko": "한국 정부, 알래스카 가스 투자 발표에 '미국이 앞서 나갔다'",
+     "paragraphs": [
+       {"en": "South Korea has pushed back against a U.S. announcement that it would invest about fifty-four billion dollars in a natural gas project in Alaska, saying Washington jumped the gun.", "ko": "한국 정부가 알래스카 천연가스 사업에 약 540억 달러를 투자할 것이라는 미국의 발표에 대해, 미국이 너무 앞서 나갔다며 반박했습니다."},
+       {"en": "U.S. President Donald Trump had described the investment as part of a larger package in which South Korea would put money into the American energy sector in exchange for lower tariffs on Korean goods.", "ko": "도널드 트럼프 미국 대통령은 이 투자를, 한국산 제품에 대한 관세를 낮춰 주는 대가로 한국이 미국 에너지 분야에 투자하는 더 큰 패키지의 일부라고 설명했습니다."},
+       {"en": "But South Korea's industry minister, Kim Jung-kwan, said Seoul had not agreed to invest that amount, or even decided whether to invest at all. He said that using specific figures and definitive language went far beyond what the two sides had actually agreed.", "ko": "그러나 김정관 산업통상자원부 장관은 한국이 그 금액을 투자하기로 합의하지 않았으며, 투자 여부조차 결정하지 않았다고 말했습니다. 그는 구체적인 수치와 단정적인 표현을 쓰는 것은 양측이 실제로 합의한 내용을 훨씬 넘어선 것이라고 말했습니다."},
+       {"en": "A statement from the U.S. Commerce Department said only that the two countries would begin working on the project, subject to commercial reasonableness, and did not mention a specific amount. The White House called the joint announcement historic but did not respond directly to the minister's comments.", "ko": "미국 상무부 성명은 양국이 상업적 타당성을 전제로 사업 논의를 시작한다고만 밝혔을 뿐, 구체적인 금액은 언급하지 않았습니다. 백악관은 공동 발표를 역사적이라고 평가했지만, 장관의 발언에는 직접 답하지 않았습니다."}]}
+  ]
+}

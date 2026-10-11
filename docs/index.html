@@ -1,0 +1,283 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#0f1419">
+<title>TOEIC 800 드라이브</title>
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="icon-192.png">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400&family=IBM+Plex+Sans+KR:wght@400;700&display=swap">
+<style>
+/* 레이아웃: 한 화면 차량용 플레이어. 위에 Day 선택, 가운데 거대한 재생 버튼, 아래 트랙 목록 */
+:root {
+  --bg: #0f1419;
+  --panel: #182029;
+  --line: #26313d;
+  --fg: #e8edf2;
+  --muted: #8a97a6;
+  --accent: #f2b33d;
+  --accent-ink: #1a1203;
+  --ok: #6cc28a;
+  --display: "IBM Plex Sans KR", "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
+  --mono: "IBM Plex Mono", ui-monospace, Consolas, monospace;
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+html, body { height: 100%; margin: 0; }
+body {
+  background: var(--bg); color: var(--fg); font-family: var(--display); font-size: 14px;
+  padding-inline: 16px;
+  padding-block: calc(16px + env(safe-area-inset-top, 0px)) calc(16px + env(safe-area-inset-bottom, 0px));
+}
+[hidden] { display: none !important; }
+.wrap { max-width: 560px; margin: 0 auto; display: flex; flex-direction: column; gap: 18px; }
+header { display: flex; justify-content: space-between; align-items: center; gap: 12px; flex-wrap: wrap; }
+h1 { font-size: 1.15rem; margin: 0; font-weight: 700; letter-spacing: .01em; }
+h1 span { color: var(--accent); }
+.hdr-r { display: flex; gap: 8px; align-items: center; }
+select, .chip {
+  font: inherit; font-size: 1rem; background: var(--panel); color: var(--fg);
+  border: 1px solid var(--line); border-radius: 10px; padding: 8px 12px;
+}
+.chip.install { background: var(--accent); color: var(--accent-ink); border-color: var(--accent); font-weight: 700; }
+.now { display: flex; flex-direction: column; gap: 6px; }
+.eyebrow { font-family: var(--mono); font-size: .75rem; color: var(--muted); letter-spacing: .08em; text-transform: uppercase; }
+.title { font-size: 1.45rem; font-weight: 700; margin: 0; text-wrap: balance; }
+.bar { height: 6px; background: var(--line); border-radius: 3px; overflow: hidden; cursor: pointer; }
+.bar i { display: block; height: 100%; width: 0; background: var(--accent); }
+.time { display: flex; justify-content: space-between; font-family: var(--mono); font-size: .85rem; color: var(--muted); font-variant-numeric: tabular-nums; }
+.controls { display: grid; grid-template-columns: 1fr 1.6fr 1fr; gap: 12px; align-items: stretch; }
+button { font: inherit; color: var(--fg); cursor: pointer; }
+button:focus-visible, select:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; }
+.side { background: var(--panel); border: 1px solid var(--line); border-radius: 18px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 4px; padding: 14px 6px; font-size: .9rem; color: var(--muted); }
+.side b { font-size: 1.6rem; color: var(--fg); line-height: 1; }
+.play {
+  background: var(--accent); color: var(--accent-ink); border: 0; border-radius: 24px;
+  aspect-ratio: 1; max-width: 100%; font-size: 1.15rem; font-weight: 700;
+  display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 6px;
+}
+.play svg { width: 44%; height: auto; fill: currentColor; }
+.skip { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.skip button { background: transparent; border: 1px solid var(--line); border-radius: 14px; padding: 14px; font-size: 1rem; }
+.offline { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 12px 14px; background: var(--panel); border: 1px solid var(--line); border-radius: 14px; }
+.offline p { margin: 0; color: var(--muted); font-size: .9rem; min-width: 0; }
+.offline p.ok { color: var(--ok); }
+.offline button { background: transparent; border: 1px solid var(--line); border-radius: 10px; padding: 8px 12px; white-space: nowrap; }
+ol { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; border-top: 1px solid var(--line); }
+li button {
+  width: 100%; text-align: left; background: none; border: 0; border-bottom: 1px solid var(--line);
+  padding: 14px 4px; display: grid; grid-template-columns: 2.2rem 1fr auto; gap: 8px; align-items: center; font-size: 1rem;
+}
+li .n { font-family: var(--mono); color: var(--muted); }
+li .d { font-family: var(--mono); color: var(--muted); font-size: .85rem; font-variant-numeric: tabular-nums; }
+li.on button, li.on .n { color: var(--accent); }
+.note { font-size: .85rem; color: var(--muted); line-height: 1.6; margin: 0; }
+.qr { display: flex; gap: 16px; align-items: center; flex-wrap: wrap; padding: 14px; border: 1px dashed var(--line); border-radius: 14px; }
+.qr img { width: 140px; height: 140px; background: #fff; padding: 8px; border-radius: 8px; }
+.qr p { margin: 0; flex: 1; min-width: 12rem; line-height: 1.6; color: var(--muted); }
+.qr b { color: var(--fg); word-break: break-all; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <h1>TOEIC <span>800</span> 드라이브</h1>
+    <div class="hdr-r">
+      <button class="chip install" id="install" hidden>앱 설치</button>
+      <select id="day" aria-label="학습일 선택"></select>
+    </div>
+  </header>
+
+  <section class="now" aria-live="polite">
+    <div class="eyebrow" id="eyebrow">불러오는 중</div>
+    <p class="title" id="title">TOEIC 800 드라이브</p>
+    <div class="bar" id="bar"><i id="fill"></i></div>
+    <div class="time"><span id="cur">0:00</span><span id="dur">0:00</span></div>
+  </section>
+
+  <div class="controls">
+    <button class="side" id="prev" aria-label="이전 트랙"><b>⏮</b>이전</button>
+    <button class="play" id="play" aria-label="재생">
+      <svg viewBox="0 0 24 24" id="icon"><path d="M7 4.5v15l12.5-7.5z"/></svg>
+      <span id="playLabel">재생</span>
+    </button>
+    <button class="side" id="next" aria-label="다음 트랙"><b>⏭</b>다음</button>
+  </div>
+  <div class="skip">
+    <button id="back">↺ 15초 뒤로</button>
+    <button id="fwd">15초 앞으로 ↻</button>
+  </div>
+
+  <div class="offline" id="offline" hidden>
+    <p id="offMsg">이 Day를 휴대폰에 저장하면 데이터 없이 들을 수 있어요.</p>
+    <button id="offBtn">저장</button>
+  </div>
+
+  <ol id="list"></ol>
+
+  <p class="note">출발 전에 재생만 눌러 두세요. 트랙이 끝나면 다음 트랙으로 자동으로 넘어가고, 차량 블루투스나 이어폰의 이전/다음 버튼으로도 조작됩니다. 화면을 꺼도 계속 재생되고, 들은 위치는 저장돼서 다음에 이어서 재생합니다.</p>
+
+  <div class="qr" id="qr" hidden>
+    <img src="qr.png" alt="앱 설치 QR 코드">
+    <p>휴대폰 카메라로 찍으면 앱 주소가 열립니다. 크롬 메뉴(⋮)에서 <b>홈 화면에 추가</b> 또는 <b>앱 설치</b>를 누르세요.<br><b id="qrUrl"></b></p>
+  </div>
+</div>
+
+<audio id="audio" preload="metadata"></audio>
+
+<script>
+const $ = id => document.getElementById(id);
+const audio = $("audio");
+const pad = (n, w) => String(n).padStart(w, "0");
+const src = (d, i) => `audio/day${pad(d, 3)}/day${pad(d, 3)}_${pad(i + 1, 2)}.mp3`;
+const fmt = s => isFinite(s) ? `${Math.floor(s / 60)}:${pad(Math.floor(s % 60), 2)}` : "0:00";
+const store = {
+  get(k) { try { return JSON.parse(localStorage.getItem(k)); } catch { return null; } },
+  set(k, v) { try { localStorage.setItem(k, JSON.stringify(v)); } catch {} },
+};
+const standalone = matchMedia("(display-mode: standalone)").matches;
+
+let DAYS = [], dayIdx = 0, track = 0;
+
+async function boot() {
+  try { DAYS = (await (await fetch("days.json", { cache: "no-cache" })).json()).days; }
+  catch { DAYS = []; }
+  if (!DAYS.length) { $("eyebrow").textContent = "학습 데이터를 불러오지 못했어요. 인터넷 연결을 확인하세요."; return; }
+  DAYS.forEach((d, i) => $("day").add(new Option(`Day ${d.day}`, i)));
+
+  // 새 Day가 올라오면 한 번은 자동으로 최신 Day로 이동, 아니면 마지막 위치에서 이어 듣기
+  const saved = store.get("pos");
+  const latest = DAYS[DAYS.length - 1].day;
+  const seen = store.get("seenMax") || 0;
+  let at = 0;
+  if (latest > seen) { dayIdx = DAYS.length - 1; store.set("seenMax", latest); }
+  else if (saved) {
+    const i = DAYS.findIndex(d => d.day === saved.day);
+    if (i >= 0) { dayIdx = i; track = Math.min(saved.track || 0, DAYS[i].tracks.length - 1); at = saved.at || 0; }
+  }
+  load(track, at);
+  if ("caches" in window && "serviceWorker" in navigator) { $("offline").hidden = false; refreshOffline(); }
+  if (!standalone && !/Android|iPhone/i.test(navigator.userAgent)) showQr();
+}
+
+function render() {
+  const d = DAYS[dayIdx];
+  $("day").value = dayIdx;
+  $("eyebrow").textContent = `Day ${d.day} · 트랙 ${track + 1} / ${d.tracks.length}`;
+  $("title").textContent = d.tracks[track].t;
+  $("list").replaceChildren(...d.tracks.map((tr, i) => {
+    const li = document.createElement("li");
+    li.className = i === track ? "on" : "";
+    const b = document.createElement("button");
+    b.innerHTML = `<span class="n">${i + 1}</span><span></span><span class="d">${Math.round(tr.m)}분</span>`;
+    b.children[1].textContent = tr.t;
+    b.onclick = () => { load(i, 0); play(); };
+    li.append(b);
+    return li;
+  }));
+  if ("mediaSession" in navigator) {
+    navigator.mediaSession.metadata = new MediaMetadata({
+      title: d.tracks[track].t, album: `TOEIC Day ${d.day}`, artist: "TOEIC 800 드라이브",
+      artwork: [{ src: "icon-512.png", sizes: "512x512", type: "image/png" }],
+    });
+  }
+}
+
+function load(i, at) {
+  track = i;
+  audio.src = src(DAYS[dayIdx].day, i);
+  if (at) audio.addEventListener("loadedmetadata", () => { audio.currentTime = at; }, { once: true });
+  render();
+  save();
+}
+function save() { if (DAYS.length) store.set("pos", { day: DAYS[dayIdx].day, track, at: audio.currentTime || 0 }); }
+function play() { audio.play().catch(() => {}); }
+function next() { if (track < DAYS[dayIdx].tracks.length - 1) { load(track + 1, 0); play(); } }
+function prev() {
+  if (audio.currentTime > 5 || track === 0) audio.currentTime = 0;
+  else { load(track - 1, 0); play(); }
+}
+const seek = s => { audio.currentTime = Math.max(0, Math.min((audio.duration || 0) - 1, audio.currentTime + s)); };
+
+function setIcon(playing) {
+  $("icon").innerHTML = playing ? '<path d="M6 4.5h4v15H6zM14 4.5h4v15h-4z"/>' : '<path d="M7 4.5v15l12.5-7.5z"/>';
+  $("playLabel").textContent = playing ? "일시정지" : "재생";
+  $("play").setAttribute("aria-label", playing ? "일시정지" : "재생");
+}
+
+// ---------- 오프라인 저장 ----------
+const trackUrls = () => DAYS[dayIdx].tracks.map((_, i) => new URL(src(DAYS[dayIdx].day, i), location.href).href);
+async function isSaved() {
+  const c = await caches.open("audio-v1");
+  return (await Promise.all(trackUrls().map(u => c.match(u)))).every(Boolean);
+}
+async function refreshOffline() {
+  const ok = await isSaved();
+  $("offMsg").textContent = ok ? `Day ${DAYS[dayIdx].day} 저장됨 · 데이터 없이 재생돼요` : "이 Day를 휴대폰에 저장하면 데이터 없이 들을 수 있어요.";
+  $("offMsg").className = ok ? "ok" : "";
+  $("offBtn").textContent = ok ? "삭제" : "저장";
+  $("offBtn").disabled = false;
+}
+$("offBtn").onclick = async () => {
+  const c = await caches.open("audio-v1");
+  const urls = trackUrls();
+  $("offBtn").disabled = true;
+  if (await isSaved()) { await Promise.all(urls.map(u => c.delete(u))); return refreshOffline(); }
+  try {
+    for (let i = 0; i < urls.length; i++) {
+      $("offMsg").textContent = `저장 중 ${i + 1} / ${urls.length}`;
+      const res = await fetch(urls[i], { cache: "no-store" });
+      if (!res.ok) throw new Error(res.status);
+      await c.put(urls[i], res);
+    }
+  } catch {
+    $("offMsg").textContent = "저장하지 못했어요. 와이파이에 연결된 상태에서 다시 눌러 주세요.";
+    $("offBtn").disabled = false;
+    return;
+  }
+  refreshOffline();
+};
+
+// ---------- 설치 ----------
+let installEvt = null;
+addEventListener("beforeinstallprompt", e => { e.preventDefault(); installEvt = e; $("install").hidden = false; });
+$("install").onclick = async () => { if (!installEvt) return; installEvt.prompt(); await installEvt.userChoice; installEvt = null; $("install").hidden = true; };
+function showQr() {
+  const img = new Image();
+  img.onload = () => { $("qrUrl").textContent = location.href.replace(/[#?].*$/, ""); $("qr").hidden = false; };
+  img.src = "qr.png";
+}
+if ("serviceWorker" in navigator && location.protocol === "https:") navigator.serviceWorker.register("sw.js").catch(() => {});
+
+// ---------- 컨트롤 ----------
+$("play").onclick = () => { if (DAYS.length) audio.paused ? play() : audio.pause(); };
+$("next").onclick = next;
+$("prev").onclick = prev;
+$("back").onclick = () => seek(-15);
+$("fwd").onclick = () => seek(15);
+$("day").onchange = e => { dayIdx = +e.target.value; load(0, 0); refreshOffline(); };
+$("bar").onclick = e => {
+  const r = e.currentTarget.getBoundingClientRect();
+  if (audio.duration) audio.currentTime = (e.clientX - r.left) / r.width * audio.duration;
+};
+audio.addEventListener("play", () => setIcon(true));
+audio.addEventListener("pause", () => { setIcon(false); save(); });
+audio.addEventListener("ended", next);
+let lastSave = 0;
+audio.addEventListener("timeupdate", () => {
+  $("cur").textContent = fmt(audio.currentTime);
+  $("dur").textContent = fmt(audio.duration);
+  $("fill").style.width = audio.duration ? `${audio.currentTime / audio.duration * 100}%` : "0";
+  if (Date.now() - lastSave > 5000) { lastSave = Date.now(); save(); }
+});
+if ("mediaSession" in navigator) {
+  const h = { play, pause: () => audio.pause(), nexttrack: next, previoustrack: prev,
+              seekbackward: () => seek(-15), seekforward: () => seek(15) };
+  for (const [k, f] of Object.entries(h)) { try { navigator.mediaSession.setActionHandler(k, f); } catch {} }
+}
+
+boot();
+</script>
+</body>
+</html>
