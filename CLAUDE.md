@@ -39,13 +39,23 @@ Icons come from `make_icons.py` (Pillow), and the QR code from `make_qr.py` (qrc
 - `sw.js` serves the app network-first. MP3s are cached only when the user taps 저장 for a day. Cached MP3s are answered with hand-built 206 responses, because `<audio>` sends Range requests. Bump `SHELL` when shell files change.
 - `qr.png` is the install QR code. `make_qr.py <url>` creates it. On desktop the page shows it so the phone can scan it.
 
-To publish a new day: build it, then run `.\publish.ps1 "Add Day N"`. The script commits, pushes and, on its first run, creates the repo, enables Pages and makes the QR code. It needs `gh auth login` done once. Git and gh were installed with winget, so a shell that was already open may need its PATH refreshed.
+### Daily automation (6:00 KST)
+
+- A claude.ai cloud routine runs at 05:30 KST. It writes the next `content/dayNNN.json`, runs `python check_content.py N` and pushes it. Cloud sessions may only be able to push to a `claude/...` branch, which is fine.
+- `.github/workflows/build.yml` runs on any push that touches `content/`. It copies `content/` from the pushed branch onto `main`, builds every day that has no `dayNNN_05.mp3` yet, commits to `main`, deletes the agent branch and redeploys Pages.
+- MP3s are therefore built on GitHub's runners, not in the cloud session. The cloud agent only writes JSON.
+- `date` in the content JSON is the KST date the day is meant for. The player shows it next to the day number.
+
+To publish a new day by hand: build it, then run `.\publish.ps1 "Add Day N"`. Alternatively, push only the JSON and let the workflow build it. The script commits, pushes and, on its first run, creates the repo, enables Pages and makes the QR code. It needs `gh auth login` done once. Git and gh were installed with winget, so a shell that was already open may need its PATH refreshed.
 
 A GitHub Pages site is limited to about 1 GB, and each day adds about 24 MB. After roughly 40 days, old days will have to be removed.
 
 An earlier player still exists as a claude.ai Artifact: https://claude.ai/artifact/KSnCAxCvWdhKkxmKGk6cXK (source `player/`, git-ignored). It only contains Day 1.
 
 ## Content rules
+
+- Every new day must not repeat earlier days. Vary the scenarios: offices, stores, travel, hotels, restaurants, hiring, real estate, events and deliveries. Use different vocab words too, and run `grep` over `content/` to check before reusing a word.
+- `date` is required (YYYY-MM-DD, KST). News must be from the last 1–3 days before that date.
 
 - Real ETS/TOEIC questions are copyrighted. Write original TOEIC-style items instead.
 - News: Korea-related stories from CNN and similar outlets, **rewritten** in your own words from real reporting. Never copy article text. Keep claims to facts you can source, and don't invent quotes or analysts.

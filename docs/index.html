@@ -144,7 +144,7 @@ async function boot() {
   try { DAYS = (await (await fetch("days.json", { cache: "no-cache" })).json()).days; }
   catch { DAYS = []; }
   if (!DAYS.length) { $("eyebrow").textContent = "학습 데이터를 불러오지 못했어요. 인터넷 연결을 확인하세요."; return; }
-  DAYS.forEach((d, i) => $("day").add(new Option(`Day ${d.day}`, i)));
+  DAYS.forEach((d, i) => $("day").add(new Option(`Day ${d.day}${d.date ? " · " + d.date.slice(5).replace("-", "/") : ""}`, i)));
 
   // 새 Day가 올라오면 한 번은 자동으로 최신 Day로 이동, 아니면 마지막 위치에서 이어 듣기
   const saved = store.get("pos");

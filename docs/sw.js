@@ -1,6 +1,6 @@
 // 앱 화면은 네트워크 우선(새 Day 반영), 오프라인이면 캐시.
 // MP3는 사용자가 '저장'한 Day만 캐시에 있고, 오디오 태그의 Range 요청에 206으로 응답한다.
-const SHELL = "shell-v1";
+const SHELL = "shell-v2";
 const AUDIO = "audio-v1";
 const SHELL_FILES = ["./", "index.html", "days.json", "manifest.webmanifest", "icon-192.png", "icon-512.png"];
 

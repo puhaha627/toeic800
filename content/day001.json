@@ -1,5 +1,6 @@
 {
   "day": 1,
+  "date": "2026-10-11",
   "part2": [
     {"accent": "US", "spk": "W", "answer": "B",
      "q": {"en": "When is the new marketing manager starting?", "ko": "새 마케팅 매니저는 언제 일을 시작하나요?"},

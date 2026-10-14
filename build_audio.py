@@ -229,7 +229,7 @@ async def main(day_no):
 
     days_file = ROOT / "docs" / "days.json"
     days = json.loads(days_file.read_text(encoding="utf-8"))["days"] if days_file.exists() else []
-    days = sorted([d for d in days if d["day"] != day_no] + [{"day": day_no, "tracks": listing}], key=lambda d: d["day"])
+    days = sorted([d for d in days if d["day"] != day_no] + [{"day": day_no, "date": day.get("date", ""), "tracks": listing}], key=lambda d: d["day"])
     days_file.write_text(json.dumps({"days": days}, ensure_ascii=False, indent=1), encoding="utf-8")
     print(f"총 {total / 60:.1f}분 -> {out} (days.json 갱신)")
 
